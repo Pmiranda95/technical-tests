@@ -1,4 +1,5 @@
 <script>
+  import './app.pcss'
 	// import Button from '$shadcn/button/button.svelte';
 </script>
 
