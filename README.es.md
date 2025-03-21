@@ -1,3 +1,5 @@
+[Español](/README.es.md) | [English](/README.en.md) | [Galego]()
+
 # Test Frontend Developer
 
 Este es un proyecto template para la prueba tecnica de Frontend
