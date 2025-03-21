@@ -1,6 +1,6 @@
 # Test Frontend Developer
 
-a proba técnica de Frontend
+Este e un proxecto template para a proba tecnica de Frontend
 
 A continuación detállanse os fitos da proba, hai que ter en conta que a proba real é versátil e pedirase ao cabo de {x} días, que se explique o código e se fagan cambios en tempo real, en función do nivel esperado.
 
