@@ -4,28 +4,22 @@
 
 Este e un proxecto template para a proba tecnica de Frontend
 
-A continuación detállanse os fitos da proba, hai que ter en conta que a proba real é versátil e pedirase ao cabo de {x} días, que se explique o código e se fagan cambios en tempo real, en función do nivel esperado.
+Tes 48 horas para facer esta proba. O tempo corre dende o clone ata o último commit. Unha vez feito, evaluaremos o teu traballo internamente e despóis faremos unha entrevista na que che pediremos modificacións en tempo real. 
 
-A API que imos usar para a proba é: **https://pokeapi.co/**
+A proba consiste en consumir esta API: **https://pokeapi.co/** para deseñar un dashboard que ten que ter as características que te comunicaremos por privado. 
 
-**Librarías preinstaladas que usamos:**
+O obxectivo e que demostres a túa capacidade técnica, creatividade e atención ó detalle. 
+
+Nos traballamos coas seguintes librerías: 
 
 - Svelte
 - Shadcn
 - Tailwind
 - D3.js
 
-## Proba Técnica
+Se ti estás máis cómodo con outras tecnoloxías como React, Vue ou Angular, podes facer a proba con elas. 
 
-### Fitos
-
-- [ ] Visualizar os pokemons por tipos (20 primeiros)
-- [ ] Visualizar un listado de pokemons dun tipo ordenados por tamaño (20 primeiros)
-- [ ] Visualizar ficha dun pokemon
-- [ ] Listados como táboas
-- [ ] Listados como gráficos
-
-### Consideracións
+## Consideracións
 
 Conceptos a aplicar que se terán moi en conta á hora de valorar.
 
@@ -37,3 +31,5 @@ Conceptos a aplicar que se terán moi en conta á hora de valorar.
 - Uso de bibliotecas que usamos no noso stack
 - Presentación UI/UX
 - Separar en compoñentes
+
+Sorte!!
