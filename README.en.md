@@ -1,39 +1,34 @@
-[Español](/README.es.md) | [English](/README.en.md) | [Galego]()
+[Español](/README.es.md) | [English](/README.en.md) | [Galego](/README.md)
 
 # Frontend Developer Test
-
 This is a template project for the Frontend technical test.
 
-Below are the milestones of the test. Keep in mind that the actual test is versatile and will be requested after {x} days, where you will need to explain the code and make real-time changes based on the expected level.
+You have 3 days to complete this test. The timer starts from the first clone until the last commit. Once finished, we will review your work internally and then schedule an interview where you'll be asked to make real-time changes.
 
-The API we will use for the test is: **https://pokeapi.co/**
+The test consists of consuming this API: **https://pokeapi.co/** to design a dashboard with features that we will share with you privately.
 
-**Pre-installed libraries we use:**
+The goal is to showcase your technical skills, creativity, and attention to detail.
+
+We work with the following libraries:
 
 - Svelte
 - Shadcn
 - Tailwind
 - D3.js
 
-## Technical Test
+If you're more comfortable with other technologies like React, Vue, or Angular, you can use them instead.
 
-### Milestones
+## Considerations
 
-- [ ] View Pokémon by types (first 20)
-- [ ] View a list of Pokémon of a type sorted by size (first 20)
-- [ ] View a Pokémon's profile
-- [ ] Lists as tables
-- [ ] Lists as charts
+Concepts to be applied that will be heavily evaluated:
 
-### Considerations
-
-Concepts to apply that will be highly valued during evaluation.
-
-- Loading state fetching
+- Fetch loading state
 - State management
-- Bind states components
+- Component state binding
 - Semantic HTML
 - Infinite scroll
-- Use of libraries that we use in our stack
+- Usage of libraries from our stack
 - UI/UX presentation
-- Separate into components
+- Component separation
+
+Good luck!

@@ -1,39 +1,34 @@
-[Español](/README.es.md) | [English](/README.en.md) | [Galego]()
+[Español](/README.es.md) | [English](/README.en.md) | [Galego](/README.md)
 
-# Test Frontend Developer
+# Test Desarrollador Frontend
+Este es un proyecto template para la prueba técnica de Frontend.
 
-Este es un proyecto template para la prueba tecnica de Frontend
+Tienes 3 dias para hacer esta prueba. El tiempo empieza a contar desde el primer clone hasta el último commit. Una vez finalizado, evaluaremos tu trabajo internamente y después haremos una entrevista en la que te pediremos cambios en tiempo real.
 
-A continuacion se detallan los histos de la prueba, hay que tener en cuenta que la prueba real es versatil se pedira al cabo de {x} dias, que se explique el codigo y se hagan cambios en tiempo real, en funcion del nivel esperado.
+La prueba consiste en consumir esta API: **https://pokeapi.co/** para diseñar un dashboard que debe tener las características que te comunicaremos por privado.
 
-La API que vamos a usar para la prueba es: **https://pokeapi.co/**
+El objetivo es que demuestres tu capacidad técnica, creatividad y atención al detalle.
 
-**Librerias preinstaladas que usamos:**
+Nosotros trabajamos con las siguientes librerías:
 
 - Svelte
 - Shadcn
 - Tailwind
 - D3.js
 
-## Prueba Tecnica
+Si te sientes más cómodo con otras tecnologías como React, Vue o Angular, puedes hacer la prueba con ellas.
 
-### Hitos
+## Consideraciones
 
-- [ ] Visualizar los pokemons por tipos (20 primeros)
-- [ ] Visualizar un listado de pokemons de un tipo ordenados por tamanho (20 primeros)
-- [ ] Visualizar ficha de un pokemon
-- [ ] Listados como tablas
-- [ ] Listados como graficos
+Conceptos a aplicar que tendrán mucho peso en la evaluación:
 
-### Consideraciones
+- Loading state al hacer fetch
+- Gestión de estado
+- Bindeo de estados entre componentes
+- HTML semántico
+- Scroll infinito
+- Uso de librerías que usamos en nuestro stack
+- Presentación UI/UX
+- Separación en componentes
 
-Conceptos a aplicar que se tendran muy en cuenta a la hora de valorar.
-
-- Loading state fetching
-- State management
-- Bind states components
-- HTML semantico
-- Infinite scroll
-- Uso de bibliotecas que usamos en nuestro stack
-- Presentacion UI/UX
-- Separar en componentes
+¡Suerte!

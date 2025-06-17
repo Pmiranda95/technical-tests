@@ -1,10 +1,10 @@
-[Español](/README.es.md) | [English](/README.en.md) | [Galego]()
+[Español](/README.es.md) | [English](/README.en.md) | [Galego](/README.md)
 
 # Test Frontend Developer
 
 Este e un proxecto template para a proba tecnica de Frontend
 
-Tes 48 horas para facer esta proba. O tempo corre dende o clone ata o último commit. Unha vez feito, evaluaremos o teu traballo internamente e despóis faremos unha entrevista na que che pediremos modificacións en tempo real. 
+Tes 3 dias para facer esta proba. O tempo corre dende o clone ata o último commit. Unha vez feito, evaluaremos o teu traballo internamente e despóis faremos unha entrevista na que che pediremos modificacións en tempo real. 
 
 A proba consiste en consumir esta API: **https://pokeapi.co/** para deseñar un dashboard que ten que ter as características que te comunicaremos por privado. 
 
@@ -32,4 +32,4 @@ Conceptos a aplicar que se terán moi en conta á hora de valorar.
 - Presentación UI/UX
 - Separar en compoñentes
 
-Sorte!!
+Sorte!
