@@ -1,42 +1,33 @@
-export interface PokemonType {
-    name: string;
-    url: string;
-  }
-  
-  export interface PokemonTypeResponse {
-    results: PokemonType[];
-  }
-  
-  export interface PokemonBasic {
-    name: string;
-    url: string;
-  }
-  
-  export interface PokemonsByTypeResponse {
-    pokemon: { pokemon: PokemonBasic }[];
-  }
-  
-  const BASE = 'https://pokeapi.co/api/v2';
-  
-  export async function fetchTypes(): Promise<PokemonTypeResponse> {
-    const res = await fetch(`${BASE}/type`);
-    if (!res.ok) throw new Error('Error fetching types');
-    return res.json();
-  }
-
-  // Añade:
-export async function fetchPokemonsByAbility(ability: string) {
-  const res = await fetch(`${BASE}/ability/${ability}`)
-  if (!res.ok) throw new Error('Error fetching pokémons by ability')
-  const data: { pokemon: { pokemon: PokemonBasic }[] } = await res.json()
-  return data.pokemon.map(p => p.pokemon).slice(0, 20)
+export interface PokemonBasic {
+  name: string;
+  url: string;
 }
-  
-  export async function fetchPokemonsByType(typeName: string): Promise<PokemonBasic[]> {
-    const res = await fetch(`${BASE}/type/${typeName}`);
-    if (!res.ok) throw new Error('Error fetching pokémons');
-    const data: PokemonsByTypeResponse = await res.json();
-    
-    return data.pokemon.slice(0, 20).map(p => p.pokemon);
-  }
-  
+
+export interface Ability {
+  name: string;
+  url: string;
+}
+
+export interface PokemonAbilityResponse {
+  results: Ability[];
+}
+
+export interface PokemonsByAbilityResponse {
+  pokemon: { pokemon: PokemonBasic }[];
+}
+
+const BASE = 'https://pokeapi.co/api/v2';
+
+export async function fetchAbilities(): Promise<Ability[]> {
+  const res = await fetch('https://pokeapi.co/api/v2/ability');
+  if (!res.ok) throw new Error('Error fetching abilities');
+  const data: PokemonAbilityResponse = await res.json();
+  return data.results;
+}
+
+export async function fetchPokemonsByAbility(abilityName: string): Promise<PokemonBasic[]> {
+  const res = await fetch(`https://pokeapi.co/api/v2/ability/${abilityName}`);
+  if (!res.ok) throw new Error('Error fetching pokémons');
+  const data: PokemonsByAbilityResponse = await res.json();
+  return data.pokemon.slice(0, 20).map((p) => p.pokemon);
+}
