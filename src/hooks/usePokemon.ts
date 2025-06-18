@@ -1,15 +1,10 @@
-// src/hooks/usePokemon.ts
-import { useQuery } from "@tanstack/react-query";
-import { fetchTypes, fetchPokemonsByType, fetchPokemonsByAbility } from "../api/pokemon";
+import { useQuery } from '@tanstack/react-query';
+import { fetchPokemonsByAbility, fetchAbilities } from '../api/pokemon';
 
-// Hook para tipos
-export function usePokemonTypes() {
+export function usePokemonAbilities() {
   return useQuery({
-    queryKey: ["types"],
-    queryFn: async () => {
-      const data = await fetchTypes();
-      return data.results;
-    },
+    queryKey: ['abilities'],
+    queryFn: fetchAbilities,
   });
 }
 
@@ -18,17 +13,5 @@ export function usePokemonsByAbility(abilityName?: string) {
     queryKey: ['pokemons-by-ability', abilityName],
     queryFn: () => fetchPokemonsByAbility(abilityName!),
     enabled: !!abilityName,
-  });
-}
-
-// Hook para pokémons de un tipo
-export function usePokemonsByType(typeName: string | undefined) {
-  return useQuery({
-    queryKey: ["pokemons", typeName],
-    queryFn: () => {
-      if (!typeName) return Promise.resolve([]);
-      return fetchPokemonsByType(typeName);
-    },
-    enabled: !!typeName,
   });
 }
