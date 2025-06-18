@@ -8,7 +8,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
-    	"format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,css,md}\""
+		"format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,css,md}\""
 	},
 	"devDependencies": {
 		"@eslint/compat": "1.2.7",
@@ -42,6 +42,7 @@
 		"d3": "^7.9.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
+		"react-infinite-scroll-component": "^6.1.0",
 		"react-router-dom": "^7.6.2",
 		"tailwind-merge": "3.0.2",
 		"tailwind-variants": "1.0.0",
