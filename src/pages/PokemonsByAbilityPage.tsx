@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AbilitiesList } from '../features/AbilitiesList/AbitlitiesList';
-import { PokemonsByAbility } from '../features/PokemonsByAbility/PokemonsByAbility';
+import { AbilitiesList } from '../features/AbilitiesList';
+import { PokemonsByAbility } from '../features/PokemonsByAbility';
 import { usePokemonsByAbility } from '../hooks/usePokemon';
 
 export const PokemonsByAbilityPage: React.FC = () => {

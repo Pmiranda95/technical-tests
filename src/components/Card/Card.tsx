@@ -9,27 +9,22 @@ export interface AbilityCardProps {
 
 export const AbilityCard: React.FC<AbilityCardProps> = ({ name, isSelected, onSelect }) => {
   const color = abilityColors[name] ?? '#6B7280';
-  const style: React.CSSProperties = {
-    borderColor: color,
-    '--tw-ring-color': color,
-  } as any;
 
   return (
     <button
       onClick={() => onSelect(name)}
-      style={style}
-      className={`
-        relative flex items-center justify-center 
-        px-4 py-3 rounded-xl border-2 
-        bg-gray-900 text-white
-        transition transform
-        hover:scale-105
-        ${isSelected ? 'ring-2 ring-opacity-50' : 'hover:ring-2 hover:ring-opacity-30'}
-        focus:outline-none focus:ring-4 focus:ring-opacity-50
-      `}
+      className={
+        `relative flex flex-col items-center justify-center p-3 rounded-lg border-2 transition-transform transform hover:scale-105 focus:outline-none ` +
+        (isSelected
+          ? `bg-opacity-20 bg-[${color}] ring-4 ring-[${color}] ring-opacity-30 text-white`
+          : `bg-gray-800 border-gray-700 text-gray-200 hover:border-[${color}]`)
+      }
+      style={{ borderColor: isSelected ? color : undefined }}
       aria-pressed={isSelected}
     >
-      <span className="capitalize font-medium">{name}</span>
+      <span className="capitalize font-medium text-sm text-center leading-tight">
+        {name.replace('-', ' ')}
+      </span>
     </button>
   );
 };
