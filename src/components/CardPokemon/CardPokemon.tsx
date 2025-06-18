@@ -15,7 +15,7 @@ export const CardPokemon: React.FC<CardPokemonProps> = ({
 }) => {
   return (
     <li
-      key={name}
+      key={`pokemon-${name}`}
       onClick={onClick}
       aria-label={name}
       style={{ border: 'solid', borderColor: color }}

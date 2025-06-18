@@ -1,0 +1,1 @@
+export { PokemonsByAbility } from './PokemonsByAbility';

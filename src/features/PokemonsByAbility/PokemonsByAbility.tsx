@@ -72,7 +72,7 @@ export const PokemonsByAbility: React.FC<PokemonGridProps> = ({
         aria-busy={isLoading}
         className="
           grid
-          grid-cols-1
+          grid-cols-2
           sm:grid-cols-2
           md:grid-cols-3
           lg:grid-cols-4

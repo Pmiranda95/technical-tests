@@ -1,6 +1,7 @@
 import React from 'react';
-import { AbilityCard } from '../../components/Card/Card';
 import { usePokemonAbilities } from '../../hooks/usePokemon';
+import { AbilityCard } from '../../components/Card/Card';
+import { getIsMobile } from '../../utils';
 
 interface AbilitiesListProps {
   selectedAbility?: string;
@@ -9,30 +10,59 @@ interface AbilitiesListProps {
 
 export const AbilitiesList: React.FC<AbilitiesListProps> = ({ selectedAbility, onSelect }) => {
   const { data: abilities, isLoading, isError } = usePokemonAbilities();
+  const isMobile = getIsMobile();
 
   if (isLoading) {
-    return <p className="text-center py-8">Cargando habilidades…</p>;
+    return (
+      <div className="flex justify-center py-8">
+        {[...Array(8)].map((_, i) => (
+          <div key={i} className="h-16 w-16 bg-gray-800 animate-pulse rounded-lg mx-2"></div>
+        ))}
+      </div>
+    );
   }
+
   if (isError || !abilities) {
-    return <p className="text-center py-8 text-red-500">Error al cargar habilidades</p>;
+    return <p className="text-center py-8 text-red-500">Error loading abilities</p>;
   }
 
   return (
     <section aria-labelledby="abilities-title" className="py-8">
-      <h2 id="abilities-title" className="text-xl font-bold text-center mb-6">
-        Selecciona una Ability:
+      <h2 id="abilities-title" className="text-2xl font-bold text-center mb-6 text-white">
+        Select an Ability
       </h2>
-      <ul className="grid grid-cols-2 sm:grid-cols-8 gap-4 px-4">
-        {abilities.map((ability) => (
-          <li key={ability.name}>
-            <AbilityCard
-              name={ability.name}
-              isSelected={ability.name === selectedAbility}
-              onSelect={onSelect}
-            />
-          </li>
-        ))}
-      </ul>
+
+      {/* Responsive horizontal scroll on small */}
+      {isMobile && (
+        <div className="overflow-x-auto py-2">
+          <ul className="flex space-x-4 px-4">
+            {abilities.map((ability) => (
+              <li key={ability.name} className="flex-shrink-0">
+                <AbilityCard
+                  name={ability.name}
+                  isSelected={ability.name === selectedAbility}
+                  onSelect={onSelect}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Grid layout for larger screens */}
+      {!isMobile && (
+        <ul className="hidden md:grid grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 px-4 mt-6">
+          {abilities.map((ability) => (
+            <li key={ability.name}>
+              <AbilityCard
+                name={ability.name}
+                isSelected={ability.name === selectedAbility}
+                onSelect={onSelect}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 };

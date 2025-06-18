@@ -1,5 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchPokemonsByAbility, fetchAbilities } from '../api/pokemon';
+import {
+  fetchPokemonsByAbility,
+  fetchAbilities,
+  PokemonDetail,
+  fetchPokemon,
+} from '../api/pokemon';
 
 export function usePokemonAbilities() {
   return useQuery({
@@ -13,5 +18,13 @@ export function usePokemonsByAbility(abilityName?: string) {
     queryKey: ['pokemons-by-ability', abilityName],
     queryFn: () => fetchPokemonsByAbility(abilityName!),
     enabled: !!abilityName,
+  });
+}
+
+export function usePokemonDetail(name?: string) {
+  return useQuery<PokemonDetail, Error>({
+    queryKey: ['pokemon', name],
+    queryFn: () => fetchPokemon(name!),
+    enabled: Boolean(name),
   });
 }
