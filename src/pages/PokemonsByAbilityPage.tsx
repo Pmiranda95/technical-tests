@@ -7,14 +7,11 @@ import { usePokemonsByAbility } from '../hooks/usePokemon';
 export const PokemonsByAbilityPage: React.FC = () => {
   const [ability, setAbility] = useState<string>();
   const navigate = useNavigate();
-  const { data: pokemons, isLoading } = usePokemonsByAbility(ability);
 
   return (
     <main className="max-w-4xl mx-auto">
       <AbilitiesList selectedAbility={ability} onSelect={setAbility} />
       <PokemonsByAbility
-        pokemons={pokemons}
-        isLoading={isLoading}
         onItemClick={(name) => navigate(`/pokemon/${name}`)}
         abilitySelect={ability}
       />
