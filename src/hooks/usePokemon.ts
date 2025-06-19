@@ -4,6 +4,7 @@ import {
   fetchAbilities,
   PokemonDetail,
   fetchPokemon,
+  fetchPokemonsByAbilityWithHeight,
 } from '../api/pokemon';
 
 export function usePokemonAbilities() {
@@ -26,5 +27,13 @@ export function usePokemonDetail(name?: string) {
     queryKey: ['pokemon', name],
     queryFn: () => fetchPokemon(name!),
     enabled: Boolean(name),
+  });
+}
+
+export function usePokemonsByAbilityWithHeight(abilityName?: string) {
+  return useQuery({
+    queryKey: ['pokemons-by-ability', abilityName, 'withHeight'],
+    queryFn: () => fetchPokemonsByAbilityWithHeight(abilityName!),
+    enabled: Boolean(abilityName),
   });
 }
