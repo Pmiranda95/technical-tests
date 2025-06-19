@@ -9,18 +9,8 @@ interface AbilitiesListProps {
 }
 
 export const AbilitiesList: React.FC<AbilitiesListProps> = ({ selectedAbility, onSelect }) => {
-  const { data: abilities, isLoading, isError } = usePokemonAbilities();
+  const { data: abilities, isError } = usePokemonAbilities();
   const isMobile = getIsMobile();
-
-  if (isLoading) {
-    return (
-      <div className="flex justify-center py-8">
-        {[...Array(8)].map((_, i) => (
-          <div key={i} className="h-16 w-16 bg-gray-800 animate-pulse rounded-lg mx-2"></div>
-        ))}
-      </div>
-    );
-  }
 
   if (isError || !abilities) {
     return <p className="text-center py-8 text-red-500">Error loading abilities</p>;

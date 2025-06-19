@@ -79,3 +79,15 @@ export async function fetchPokemonsByAbilityWithHeight(
 
   return details;
 }
+
+export async function fetchPokemonSpecies(name: string) {
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${name}`);
+  if (!res.ok) throw new Error('Species fetch failed');
+  return res.json() as Promise<{ evolution_chain: { url: string } }>;
+}
+
+export async function fetchEvolutionChain(chainUrl: string) {
+  const res = await fetch(chainUrl);
+  if (!res.ok) throw new Error('Evolution chain fetch failed');
+  return res.json();
+}
