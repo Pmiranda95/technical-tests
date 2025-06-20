@@ -18,8 +18,8 @@
 
   html,
   body {
-    @apply min-h-screen;
-    background-image: linear-gradient(135deg, #02131b 0%, #00131d 50%, #001320 100%);
+    @apply min-h-screen bg-cover bg-center bg-fixed bg-no-repeat;
+    background-image: url('/background1.jpg');
     color: white;
     margin: 0;
     padding: 0;
