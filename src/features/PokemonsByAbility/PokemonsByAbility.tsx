@@ -14,9 +14,14 @@ export interface PokemonBasic {
 interface PokemonGridProps {
   abilitySelect: string;
   onItemClick: (name: string) => void;
+  selectedForCompare: string[];
 }
 
-export const PokemonsByAbility: React.FC<PokemonGridProps> = ({ abilitySelect, onItemClick }) => {
+export const PokemonsByAbility: React.FC<PokemonGridProps> = ({
+  abilitySelect,
+  onItemClick,
+  selectedForCompare,
+}) => {
   // Use custom hook for fetch, sort and pagination
   const { paginated, isLoading, sortOrder, setSortOrder, loadMore, hasMore } =
     usePaginatedSortedPokemons(abilitySelect);
@@ -54,16 +59,20 @@ export const PokemonsByAbility: React.FC<PokemonGridProps> = ({ abilitySelect, o
                   <SimpleSkeleton className="h-32 w-full" />
                 </li>
               ))
-            : paginated.map((p) => (
-                <li key={p.name}>
-                  <CardPokemon
-                    name={p.name}
-                    img={p.sprite}
-                    color={abilityColors[abilitySelect] ?? '#57534E'}
-                    onClick={() => onItemClick(p.name)}
-                  />
-                </li>
-              ))}
+            : paginated.map((p) => {
+                const isSel = selectedForCompare?.includes(p.name);
+                return (
+                  <li key={p.name}>
+                    <CardPokemon
+                      name={p.name}
+                      img={p.sprite}
+                      color={abilityColors[abilitySelect] ?? '#57534E'}
+                      onClick={() => onItemClick(p.name)}
+                      isSelected={isSel}
+                    />
+                  </li>
+                );
+              })}
         </ul>
       </InfiniteScroll>
     </div>

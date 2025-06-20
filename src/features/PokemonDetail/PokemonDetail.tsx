@@ -4,7 +4,7 @@ import { CardPokemon } from '../../components/CardPokemon/CardPokemon';
 import { useEvolutionChain, usePokemonDetail, usePokemonSpecies } from '../../hooks/usePokemon';
 import { extractNextEvolutions } from '../../utils';
 import { PokemonStats } from './PokemonStants';
-import { Tag } from '../../components/Tag/Tag';
+import { EvolutionList } from './EvolutionList';
 
 export const PokemonDetail: React.FC = () => {
   const { name } = useParams<{ name: string }>();
@@ -39,28 +39,7 @@ export const PokemonDetail: React.FC = () => {
         {/* Column left: imag and evol */}
         <div className="flex-1 p-6 bg-gray-800 rounded-xl shadow-lg text-center">
           <CardPokemon name={data.name} img={imgUrl} color={undefined} onClick={undefined} />
-          {nextEvos.length > 0 && (
-            <section className="my2">
-              <h3 className="font-semibold mt-6 mb-4 text-lg text-white">Evolutions</h3>
-              <ul className="flex flex-wrap gap-3 mt-2">
-                {nextEvos.map((evoName) => (
-                  <li key={evoName}>
-                    <Tag
-                      label={evoName}
-                      onClick={() => navigate(`/pokemon/${evoName}`)}
-                      className="
-                        bg-sky-500 text-white
-                        px-3 py-1 rounded-full
-                        hover:bg-sky-600
-                        focus:outline-none focus:ring-2 focus:ring-sky-300
-                        transition
-                    "
-                    />
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
+          {nextEvos.length > 0 && <EvolutionList evolutions={nextEvos} />}
         </div>
 
         {/* Column rigth: stats */}

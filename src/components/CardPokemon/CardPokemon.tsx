@@ -4,12 +4,14 @@ export interface CardPokemonProps {
   name: string;
   img: string;
   color?: string;
+  isSelected?: boolean;
   onClick?: () => void;
 }
 
 export const CardPokemon: React.FC<CardPokemonProps> = ({
   name,
   img,
+  isSelected = false,
   color = 'gray-600',
   onClick,
 }) => {
@@ -28,6 +30,13 @@ export const CardPokemon: React.FC<CardPokemonProps> = ({
         shadow-lg 
         transition-transform transform hover:scale-105
         cursor-pointer
+
+        border-2
+        ${
+          isSelected
+            ? `ring-4 opacity-50`
+            : 'ring-0 hover:ring-2 hover:ring-opacity-30'
+        }
       `}
     >
       <div

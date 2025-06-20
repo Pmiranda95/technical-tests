@@ -2,12 +2,12 @@ import { useQuery } from '@tanstack/react-query';
 import {
   fetchPokemonsByAbility,
   fetchAbilities,
-  PokemonDetail,
   fetchPokemon,
   fetchPokemonsByAbilityWithHeight,
   fetchEvolutionChain,
   fetchPokemonSpecies,
 } from '../api/pokemon';
+import { PokemonDetail } from '../api/types';
 
 export const usePokemonAbilities = () => {
   return useQuery({
@@ -48,10 +48,6 @@ export const usePokemonSpecies = (name?: string) => {
   });
 };
 
-/**
- * Hook to fetch and flatten the evolution chain for a given species URL.
- * @param chainUrl URL returned in species.evolution_chain.url
- */
 export const useEvolutionChain = (chainUrl?: string) => {
   return useQuery({
     queryKey: ['evolution-chain', chainUrl],
